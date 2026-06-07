@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NUMBERS CHECKER DASHBOARD</title>
+    <style>
+        body {
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        .header-info {
+            font-size: 14px;
+        }
+
+        /* Simple centered menu */
+        .nav-container {
+            margin: 20px;
+        }
+
+        .nav-item {
+            display: inline-block;
+            width: 150px;
+            padding: 15px;
+            margin: 5px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 15px; /* Added rounded corners */
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .nav-item:hover {
+            background-color: yellow;
+        }
+
+        /* Main box */
+        #display-area {
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 20px; /* Added rounded corners */
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 300px;
+        }
+
+        input {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 5px; /* Added rounded corners */
+            border: 1px solid black;
+        }
+
+        button {
+            padding: 5px 15px;
+            cursor: pointer;
+            border-radius: 8px; /* Added rounded corners */
+            border: 1px solid black;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="header-info">HARSHA-25228</p>
+    <h1>NUMBERS CHECKER</h1>
+    <hr>
+
+    <div class="nav-container">
+        
+        <div class="nav-item" style="color: red;" onclick="loadTool('even')">
+            EVEN / ODD
+        </div>
+
+        <div class="nav-item" style="color: green;" onclick="loadTool('prime')">
+            PRIME
+        </div>
+
+        <div class="nav-item" style="color: blue;" onclick="loadTool('factorial')">
+            FACTORIAL
+        </div>
+
+        <div class="nav-item" style="color: purple;" onclick="loadTool('armstrong')">
+            ARMSTRONG
+        </div>
+
+    </div>
+
+    <div id="display-area">
+        <div id="content-inner">
+            <p>Click a box above to start.</p>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function loadTool(choice) {
+            var container = document.getElementById('content-inner');
+            var res = document.getElementById('result');
+            res.innerHTML = ''; 
+            
+            if(choice == 'even') {
+                container.innerHTML = '<h2>Check Even or Odd</h2>' +
+                    '<input type="number" id="num">' +
+                    '<br><button onclick="checkEven()">Check</button>';
+            } 
+            else if(choice == 'prime') {
+                container.innerHTML = '<h2>Check Prime</h2>' +
+                    '<input type="number" id="num">' +
+                    '<br><button onclick="checkPrime()">Check</button>';
+            }
+            else if(choice == 'factorial') {
+                container.innerHTML = '<h2>Check Factorial</h2>' +
+                    '<input type="number" id="num">' +
+                    '<br><button onclick="calcFact()">Calculate</button>';
+            }
+            else if(choice == 'armstrong') {
+                container.innerHTML = '<h2>Check Armstrong</h2>' +
+                    '<input type="number" id="num">' +
+                    '<br><button onclick="checkArmstrong()">Check</button>';
+            }
+        }
+
+        function checkEven() {
+            var a = document.getElementById("num").value;
+            if (a == "") {
+                document.getElementById("result").innerHTML = "Enter a number!";
+            } else if (a % 2 == 0) {
+                document.getElementById("result").innerHTML = a + " is Even";
+            } else {
+                document.getElementById("result").innerHTML = a + " is Odd";
+            }
+        }
+
+        function checkPrime() {
+            var n = document.getElementById("num").value;
+            var count = 0;
+            if (n == "") {
+                document.getElementById("result").innerHTML = "Enter a number!";
+                return;
+            }
+            for (var i = 1; i <= n; i++) {
+                if (n % i == 0) {
+                    count = count + 1;
+                }
+            }
+            if (count == 2) {
+                document.getElementById("result").innerHTML = n + " is Prime";
+            } else {
+                document.getElementById("result").innerHTML = n + " is Not Prime";
+            }
+        }
+
+        function calcFact() {
+            var n = document.getElementById("num").value;
+            var k = 1;
+            if (n == "") {
+                document.getElementById("result").innerHTML = "Enter a number!";
+                return;
+            }
+            for (var i = 1; i <= n; i++) {
+                k = k * i;
+            }
+            document.getElementById("result").innerHTML = "Result: " + k;
+        }
+
+        function checkArmstrong() {
+            var n = document.getElementById("num").value;    
+            if (n == "") {
+                document.getElementById("result").innerHTML = "Enter a number!";
+                return;
+            }
+            var k = Number(n);
+            var temp = k;     
+            var s = 0;
+            while (temp > 0) {
+                var r = temp % 10;          
+                s = s + (r * r * r);         
+                temp = Math.floor(temp / 10);
+            }
+            if (s == k) {
+                document.getElementById("result").innerHTML = k + " is Armstrong";
+            } else {
+                document.getElementById("result").innerHTML = k + " is Not Armstrong";
+            }
+        }
+    </script>
+
+</body>
+</html>

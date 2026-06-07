@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Learning Hub</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(to right,#1c3fd4,#4f6df5);
+}
+
+.container{
+width:90%;
+margin:30px auto;
+background:#f3f3f3;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 0px 10px black;
+}
+
+h1{
+text-align:center;
+color:#1c3fd4;
+}
+
+/* Navigation links */
+
+.course-links{
+text-align:center;
+margin-bottom:20px;
+}
+
+.course-links a{
+text-decoration:none;
+margin:0 15px;
+color:#0a3c8a;
+font-weight:bold;
+}
+
+.course-links a:hover{
+color:red;
+}
+
+.main{
+display:flex;
+gap:20px;
+}
+
+/* Login section */
+
+.login{
+width:35%;
+background:#e6e6e6;
+padding:20px;
+border-radius:10px;
+}
+
+.login input,.login select{
+width:90%;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid black;
+}
+
+.login button{
+width:90%;
+padding:10px;
+background:black;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* Course details */
+
+.about{
+width:65%;
+background:#dedede;
+padding:20px;
+border-radius:10px;
+}
+
+.course-content{
+display:none;
+}
+
+.course-content:target{
+display:block;
+}
+
+.course-content img{
+width:70%;
+height:250px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1><b>ONLINE LEARNING HUB</b></h1>
+
+<div class="course-links">
+<a href="#web">Web Development</a>
+<a href="#python">Python Programming</a>
+<a href="#datascience">Data Science</a>
+<a href="#ai">Artificial Intelligence</a>
+<a href="#cyber">Cyber Security</a>
+</div>
+
+<div class="main">
+
+<!-- Login Section -->
+
+<div class="login">
+
+<h3>Student Login</h3>
+
+<input type="text" placeholder="Username">
+
+<input type="password" placeholder="Password">
+
+<input type="email" placeholder="Enter Email" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<select required>
+<option value="">Select Course</option>
+<option>Web Development</option>
+<option>Python Programming</option>
+<option>Data Science</option>
+<option>Artificial Intelligence</option>
+<option>Cyber Security</option>
+</select>
+
+<button>Submit</button>
+
+</div>
+
+<!-- Course Details -->
+
+<div class="about">
+
+<h3>Course Details</h3>
+
+<div id="web" class="course-content">
+
+<img src="web.jpg">
+
+<h4>Web Development</h4>
+
+<p>Learn HTML, CSS, JavaScript and build responsive websites.</p>
+
+</div>
+
+<div id="python" class="course-content">
+
+<img src="py.jpg">
+
+<h4>Python Programming</h4>
+
+<p>Python is widely used for software development, automation and AI.</p>
+
+</div>
+
+<div id="datascience" class="course-content">
+
+<img src="data-science.jpg">
+
+<h4>Data Science</h4>
+
+<p>Learn data analysis, visualization and machine learning.</p>
+
+</div>
+
+<div id="ai" class="course-content">
+
+<img src="ai.jpg">
+
+<h4>Artificial Intelligence</h4>
+
+<p>Study machine learning, deep learning and intelligent systems.</p>
+
+</div>
+
+<div id="cyber" class="course-content">
+
+<img src="cyber.webp">
+
+<h4>Cyber Security</h4>
+
+<p>Learn ethical hacking, network security and digital protection.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
